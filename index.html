@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AROMA & ESSÊNCIA</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background-color: #f6f2e6;
+            color: #1D2E19;
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #4c763d;
+            padding: 15px 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            position: relative;
+        }
+
+        .header-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .logo-container img {
+            max-width: 200px;
+            height: auto;
+            max-height: 200px;
+            object-fit: contain;
+        }
+
+        header h1 {
+            font-family: 'Cormorant Garamond', serif;
+            color: #f1eada;
+            font-size: clamp(2.5rem, 8vw, 6rem);
+            margin: 0;
+            letter-spacing: -1px;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        header a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        nav.urls {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        nav.urls button {
+            background-color: #e39a4c;
+            border: none;
+            padding: 12px 20px;
+            cursor: pointer;
+            font-size: clamp(1.1rem, 4vw, 1.4rem);
+            border-radius: 50px;
+            color: #ffffff;
+            font-weight: bold;
+            font-family: 'Open Sans', sans-serif;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transition: all 0.25s ease;
+            min-width: 150px;
+        }
+
+        nav.urls button a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        nav.urls button:hover {
+            background-color: #f2b976;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+        }
+
+        .section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            font-family: 'Cormorant Garamond', serif;
+            color: #1D2E19;
+            font-size: clamp(2rem, 6vw, 3.5rem);
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            font-family: 'Cormorant Garamond', serif;
+            color: #1D2E19;
+            font-size: clamp(1.8rem, 5vw, 2.8rem);
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        p {
+            color: #1D2E19;
+            font-size: clamp(1rem, 3vw, 1.1rem);
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .homeBox {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .homeShowcase {
+            background-color: rgba(255,255,255,0.3);
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .homeShowcase img {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            border-radius: 10px;
+            margin: 15px 0;
+        }
+
+        .homeShowcase p {
+            text-align: left;
+            margin: 15px 0;
+        }
+
+        .homeShowcase a {
+            display: inline-block;
+            color: #A60B08;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 8px 15px;
+            border-radius: 20px;
+            background-color: rgba(166,11,8,0.1);
+            transition: all 0.25s ease;
+            margin-top: 10px;
+        }
+
+        .homeShowcase a:hover {
+            color: #ffffff;
+            background-color: #A60B08;
+        }
+
+        .info {
+            background-color: rgba(255,255,255,0.3);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            margin: 30px 0;
+        }
+
+        .info p {
+            text-align: justify;
+            margin-bottom: 20px;
+        }
+
+        .info a {
+            display: inline-block;
+            background-color: #4c763d;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.25s ease;
+        }
+
+        .info a:hover {
+            background-color: #3a5a2e;
+            transform: translateY(-2px);
+        }
+
+        .produto {
+            text-align: center;
+            background-color: rgba(255,255,255,0.3);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            margin: 30px 0;
+        }
+
+        .produto img {
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            border-radius: 10px;
+            margin: 15px 0;
+        }
+
+        .produto h2 {
+            color: #4c763d;
+            margin: 25px 0 15px 0;
+        }
+
+        .produto p {
+            text-align: left;
+            margin: 15px 0;
+            padding: 0 10px;
+        }
+
+        .whatsapp {
+            text-align: center;
+            padding: 30px;
+        }
+
+        .whatsapp a {
+            display: block;
+            font-size: clamp(1.2rem, 4vw, 1.6rem);
+            font-weight: 600;
+            color: #ffffff;
+            margin: 20px auto;
+            text-decoration: none;
+            padding: 15px 25px;
+            border-radius: 25px;
+            background-color: #4c763d;
+            transition: all 0.25s ease;
+            max-width: 400px;
+        }
+
+        .whatsapp a:hover {
+            background-color: #3a5a2e;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+        }
+
+        /* Mobile optimizations */
+        @media (max-width: 768px) {
+            header {
+                padding: 15px;
+            }
+
+            .logo-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .logo-container img {
+                max-width: 150px;
+                max-height: 150px;
+            }
+
+            nav.urls {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+
+            nav.urls button {
+                width: 100%;
+                max-width: 250px;
+            }
+
+            .homeBox {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .homeShowcase, .info, .produto {
+                padding: 20px;
+                margin: 15px 0;
+            }
+
+            .section {
+                padding: 15px;
+            }
+        }
+
+        /* Very small screens */
+        @media (max-width: 480px) {
+            .section {
+                padding: 10px;
+            }
+
+            .homeShowcase, .info, .produto {
+                padding: 15px;
+                margin: 10px 0;
+            }
+
+            .whatsapp a {
+                padding: 12px 20px;
+                margin: 15px auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo-container">
+                <img src="media/logo-saboaria.png" alt="Logo Aroma & Essência">
+                <div>
+                    <a href="#home" onclick="showSection('home')">
+                        <h1>AROMA & ESSÊNCIA</h1>
+                    </a>
+                </div>
+            </div>
+            <nav class="urls">
+                <button>
+                    <a href="#sobre" onclick="showSection('sobre')">Sobre o nosso projeto</a>
+                </button>
+                <button>
+                    <a href="#contato" onclick="showSection('contato')">Contato</a>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Home Section -->
+    <div id="home" class="section" style="display: block;">
+        <div class="homeBox">
+            <div class="homeShowcase">
+                <h2>Produtos</h2>
+                <img src="media/Product.png" alt="Produtos">
+                <p>Apresentamos as nossas opções de produtos de higiene...</p>
+                <a href="#produtos" onclick="showSection('produtos')">Ver detalhes...</a>
+            </div>
+            <div class="homeShowcase">
+                <h2>Sobre o nosso projeto</h2>
+                <img src="media/logo-para-about.png" alt="Sobre nós">
+                <p>Somos um grupo de estudantes que decidiu juntar o útil ao agradável: 
+                    aprender sobre empreendedorismo enquanto criamos sabonetes artesanais de verdade.
+                    Nosso objetivo é oferecer produtos feitos com ingredientes naturais...</p>
+                <a href="#sobre" onclick="showSection('sobre')">Ver detalhes...</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <div id="sobre" class="section" style="display: none;">
+        <div class="info">
+            <h2>Sobre Nós</h2>
+            <div>
+                <p>
+                    Este site vai ser uma das formas de apresentar nosso produto e proporcionar acesso ao nosso grupo de WhatsApp.
+                </p>
+                <p>
+                    Somos um grupo de estudantes que decidiu juntar o útil ao agradável: aprender sobre empreendedorismo enquanto criamos sabonetes artesanais de verdade. Nosso objetivo é oferecer produtos feitos com ingredientes naturais, com atenção ao meio ambiente e à saúde da pele.
+                </p>
+                <p>
+                    Esse projeto é uma forma de colocar em prática o que estamos aprendendo e mostrar que dá pra fazer algo simples, consciente e que faça sentido no dia a dia.
+                </p>
+                <p>
+                    Se você valoriza produtos feitos com dedicação e que não enrolam, tá com a gente.
+                </p>
+                <a href="https://chat.whatsapp.com/Hnr8OKyBNu85Pjtqa5y5eF">Mais informação...</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Products Section -->
+    <div id="produtos" class="section" style="display: none;">
+        <div class="produto">
+            <h1>PRODUTOS</h1>
+            <img src="media/product (2).png" alt="Produtos"/>
+            <div>
+                <h2>Sabonete hidratante cheiro de morango</h2>
+                <img src="media/WhatsApp Image 2025-09-17 at 19.18.36.jpeg" alt="Sabonete de morango">
+                <h2 style="color: #A60B08; font-size: clamp(1.5rem, 4vw, 2rem);">Preço: R$12,90</h2>
+                <p><strong>Descrição:</strong> Fórmula artesanal cuidadosamente desenvolvida com manteiga de karité e óleo de amêndoas, que proporcionam nutrição, maciez e hidratação à pele. Enriquecido com a deliciosa fragrância de morango, este sabonete transforma o seu banho em um momento único de cuidado e bem-estar. 🌸</p>
+                <p><strong>Ingredientes:</strong> Base glicerinada branca, manteiga de karité, óleo de amêndoas, essência de morango e corante cosmético vermelho.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <div id="contato" class="section" style="display: none;">
+        <div class="whatsapp">
+            <a href="https://chat.whatsapp.com/Hnr8OKyBNu85Pjtqa5y5eF">📱 Grupo de WhatsApp</a>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdQGPS5p4XkX8q3qd1bFnNAWfavPamZfjNY8qMozdmWgjBrQQ/viewform">📝 Ajude-nos a melhorar nosso produto</a>
+        </div>
+    </div>
+
+    <script>
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => {
+                section.style.display = 'none';
+            });
+            
+            const targetSection = document.getElementById(sectionId);
+            if (targetSection) {
+                targetSection.style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>
